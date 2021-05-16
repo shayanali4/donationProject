@@ -3,10 +3,15 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js'
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const fileUpload = require('express-fileupload'); 
 
 dotenv.config(); // getting data from .env file
 
 const app = express(); // defining express app
+app.use(fileUpload());
 
 app.use(cors()) // Use this after the variable declaration
 

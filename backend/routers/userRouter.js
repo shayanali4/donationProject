@@ -3,6 +3,11 @@ import expressAsyncHandler from 'express-async-handler'; //importing express-asy
 import bcrypt from 'bcryptjs';  // importing bcrypt library which is used to hash the stored password so that it can not be readable
 import User from '../models/userModel.js'; // importing User Schema from models
 import { generateToken } from '../utils.js'; // importing generate token function from utils.js file
+import path from 'path';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const fs = require('fs');
+
 
 // Defining the user Router so that is can be used whenever it is called
 const userRouter = express.Router();
@@ -31,6 +36,7 @@ userRouter.post('/signin', expressAsyncHandler(async (req, res) => {
         if (bcrypt.compareSync(req.body.password, user.password)) { // Comparing the user entered password and stored password
             res.send({  //if passwords match, send user data in response
                 _id: user._id,
+                image: user.image,
                 fullName: user.fullName,
                 email: user.email,
                 token: generateToken(user),
@@ -80,6 +86,63 @@ userRouter.delete('/delete/:id', expressAsyncHandler(async (req, res) => {
     }).catch(() => {
         res.status(400).send({ message: 'User not Found' }); // if user not found
     });
+}));
+
+
+userRouter.post('/upload/:id', expressAsyncHandler(async (req, res) => {
+    const __dirname = path.resolve();
+    if (req.files === null) {
+        res.status(400).json({ message: 'No file uploaded' })
+    }else{
+        console.log("file==>", req.files) 
+    
+    const file = req.files.myFile;
+    const filename = req.files.myFile.name;
+        let i = filename.lastIndexOf('.');
+        const fileExt = filename.substr(i);
+
+    fs.access(`${__dirname}/uploads`,
+        fs.constants.F_OK, async noFolder => {
+            if (noFolder) {
+                fs.mkdir(`${__dirname}/uploads`, function (err) {
+                    if (err) {
+                        console.log(err)
+                    } else {
+                        console.log("New directory successfully created.")
+                    }
+                });
+            }
+    });
+    const user = await User.findOne({ _id: req.params.id }); // Finding the user by _id
+    user.image=`${req.params.id}${fileExt}`;
+    await user.save();
+    file.mv(`${__dirname}/uploads/${req.params.id}${fileExt}`, err => { 
+        if (err) {
+            console.error(err);
+            res.send(500).send(err)
+        }
+        res.send({ message: "File uploaded successfully" });
+    })
+}
+}
+));
+
+userRouter.get('/image/:id', expressAsyncHandler(async (req, res) => {
+    const __dirname = path.resolve();
+    const user = await User.findOne({ _id: req.params.id }); // Finding the user by _id
+    if(user){
+        const fileName = user.image;
+        // const imagePath = `${__dirname}/uploads/profile.jpg`;
+        if(fileName===''){
+            res.send({message: "The image is either moved or deleted !"});
+        }else{
+            const imagePath = `${__dirname}/uploads/${fileName}`;
+            res.sendFile(imagePath);
+        }
+    }else{
+        res.send({message: "The image is either moved or deleted !"});
+    }
+
 }));
 
 export default userRouter;  // exporting the router so that it can be used in the server.js file

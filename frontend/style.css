@@ -1,0 +1,510 @@
+
+
+body{
+
+ 
+}
+
+/* signup section styles */
+.signin1{
+
+}
+
+.signupsection{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 34%;
+  margin-top: 20px;
+
+}
+
+/* login section tag styles */
+.section{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 34%;
+  }
+
+
+  /* payment donate section tAG style*/
+  .donatesection{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35%;
+
+  }
+
+
+#Donate{
+  color: white;
+}
+.signout{
+  display: none;
+}
+.profile{
+  display: none;
+}
+
+/* h2 tag is used for heading */
+ h2 {
+    margin: 0 0 20px;
+    line-height: 1;
+    color: #44c4e7;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .hide{
+    display: none !important;
+
+  }
+
+  /* styling of input */
+  input {
+    outline: none;
+    display: block;
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    font-family: "Roboto";
+    box-sizing: border-box;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: 0.2s linear;}
+  input:focus {
+      color: #333;
+      border: 1px solid #44c4e7;
+    }
+    .hoveronheading:hover{
+      padding: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.5s;
+    }
+    .success{
+      background-color:green ;
+    color: white;
+    padding: 5px; text-align: center;
+    margin-bottom: 10px;
+  }
+  .alignment{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+    
+   
+ 
+  .login{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    
+  }
+  .error{
+    background-color:#B40000 ;
+    color: white;
+    padding: 5px; text-align: center;
+    margin-bottom: 10px;
+  }
+ 
+  .login:hover{
+
+    background-color: darkorange;
+    padding: 12px!important;
+    transition: 0.3s;
+  }
+   
+  
+  /* signup button  */
+  .signup{
+    cursor: pointer;
+    background:#5D87A1;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    
+  }
+  .update{
+    cursor: pointer;
+    background:#5D87A1;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    
+  }
+  .update:hover
+  {
+    background-color: #2FC4F8!important;
+    padding: 13px!important;
+    transition: 0.3s;
+
+  }
+  .signup:hover
+  {
+    background-color: #2FC4F8!important;
+    padding: 13px!important;
+    transition: 0.3s;
+
+  }
+  
+
+  /* create button style  in signup page*/
+  .create{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+  .donate{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+
+.donate:hover{
+  background-color: darkorange;
+    padding: 11px!important;
+    transition: 0.3s;
+
+
+  }
+
+
+
+  .create:hover{
+
+    transition: 0.3s;
+
+    background-color: darkorange;
+    /* padding: 0px!important; */
+    padding: 11px!important;
+
+
+  }
+
+
+
+
+
+  .cancel{
+    cursor: pointer;
+    background:#5D87A1;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+  .cancel:hover{
+
+    transition: 0.3s;
+
+    background-color: #2FC4F8!important;
+    padding: 11px!important;
+
+
+  }
+
+
+
+  
+  .button.button--default{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+      /* styling of button whose class is donate20  styling below*/
+
+
+  .donate20{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+
+  }
+
+    /* styling of button whose class is donate100  styling below*/
+
+  .donate100{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+
+  }
+
+
+  /* styling of button whose class is otherdonate  styling below*/
+  .otherdonate{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+
+  }
+  
+     /*  on hover animation on button whose class is otherbutton  in page1 */
+     .otherdonate:hover{
+      transition: 0.3s;
+
+    background-color: darkorange;
+    padding: 12px!important;
+  }
+
+
+     /*  on hover animation on button whose class is donate20  in page1 */
+.donate20:hover{
+  transition: 0.3s;
+
+    background-color: darkorange;
+    padding: 12px!important;
+  }
+     /*  on hover animation on button whose class is donate100
+       in page1 */
+
+  .donate100:hover{
+    transition: 0.3s;
+
+    background-color: darkorange;
+    padding: 12px!important;
+
+
+
+  }
+  #Donate1{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 5px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    
+  }
+  #Donate1:hover{
+
+    background-color: darkorange;
+    padding: 12px!important;
+    transition: 0.3s;
+
+  }
+ 
+  #Donate0{
+    cursor: pointer;
+    background: #F08B1D;
+    width: 100%;
+    padding: 10px 5px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    
+  }
+  #Donate0:hover{
+
+    background-color: darkorange;
+    padding: 12px!important;
+    transition: 0.3s;
+
+  }
+  
+
+  .paymentdonate{
+      margin-top: 100px;
+  }
+
+
+  @media screen and (max-width: 700px) {
+    .section{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 16%;
+  }
+  .signupsection{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 16%;
+    
+  
+  }
+  .avatar{
+   
+      font-size: 124px  !important;
+      color: lightgray;
+      /* margin-right: 63px; */
+      text-align: center;
+  
+  }
+  /* donate section main setting */
+  .donatesection{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 16%;
+
+  }
+  .mobheading12{
+    font-size: 17px!important ;
+  }
+  
+  
+    .rowmob{
+      padding: 10px;
+      display: flex; justify-content: center; align-items: center;
+      
+    }
+    /* logo setting for mobile tag */
+    .moblogo{
+      width: 100%;
+    }
+    .fullwidth{
+      width: 50%;
+    }
+    /* padding setting for mobile */
+    .paddingmob{
+      padding: 0px !important;
+      margin: 0px;
+    }
+    /* h6 tag resize in mobile */
+    .mobh6{
+      padding: 10px;
+      font-size: 1rem;
+      text-align: center;
+      font-size: 20px;
+      margin-left: 0px !important;
+    }
+    .mobheading{
+      margin-left: 0px!important;
+      text-align: left!important;
+      font-size: 17px!important;
+    }
+    .mobheading1{
+      margin-left: 0px!important;
+      text-align: left!important;
+      font-size: 14px!important;
+    }
+    
+
+
+    .block{
+      display: block !important ;
+    }
+
+    .imgmob1{
+      width: 100%;
+      margin-left: -60px;
+    }
+    .h6mob{
+      font-size: 12px;
+    }
+    .h6mob1{
+      font-size: 15px;
+      font-weight: bold;
+      padding: 2px;
+    }
+    .h6mob4{
+      margin-top: 30px;
+    }
+    
+    .margin12{
+      margin: 0px !important;
+    }
+    .picturemob{
+
+      margin-left: 100px !important;
+      margin-top: 10px!important;
+    }
+    .mobilemargin{
+      margin-top: 50px;
+    }
+    
+    .margin11{
+margin: 40px !important;
+}
+
+.margin10{
+  margin-left: 20px !important;
+  margin-right: 20px!important;    }
+    
+
+  
+ 
+   
+   
+      
+  
+    }

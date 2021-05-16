@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.39/dist/themes/base.css">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+    body {
+        font-family: 'Poppins';
+    }
+    </style>
+
+
+</head>
+<body style="background-color: white;">
+
+ 
+
+    <nav class="navbar navbar-expand-md navbar-light " style="background: #FFE9D6;" >
+        <a href="./index.html" class="navbar-brand">
+          <img src="./images/logo.png" width="200px" height="25px" alt="">                       </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse" >
+           
+            <div class="navbar-nav ml-auto">
+                <a href="./index.html" style="font-size: 12px; font-weight: bolder;" class="nav-item nav-link">HOME</a>
+                <a href="./profile.html" style="font-size: 12px;  font-weight: bold;" id="profile"   class="nav-item nav-link  ">PROFILE</a>
+
+                <a href="./about.html" style="font-size: 12px; font-weight: bold;" class="nav-item nav-link">CONTACT</a>
+
+
+                <a href="./login.html"  style="font-size: 12px;    font-weight: bold;"  id="hide"  class="nav-item nav-link  ">SIGN IN</a>
+                <a href="./login.html"  style="font-size: 12px;    font-weight: bold;" id="signout"  class="nav-item nav-link " onClick="signout()" >SIGN OUT</a>   
+            </div>
+        </div>
+    </div>
+
+    </nav>
+                    <div class="container-fluid  "  >
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-12" style="text-align: center;">
+                                <img  class="moblogo" src="./images/logo.png" width="40%" height="auto"  style="  padding: 10px;  "alt="">
+
+<div class="paddingmob"  style="padding-left: 100px; padding-right: 100px; margin-top: 40px;">
+    <marquee behavior="alternate">
+
+                                <h4 class="hoveronheading mobheading1" style="   width: 100%!important; padding: 10px;  ">Want to mail us a letter or a check ?
+                            </marquee>
+                                </h4>
+                            </div>
+
+
+
+<div  class="col-md-12 paddingmob" style="text-align: center;padding-left: 200px; padding-right: 200px; ">
+<p class="paddingmob" style="text-align: center;padding-left: 100px; padding-right: 100px;" >As we strive to put our employees' health and safety first by working remotely through the pandemic, we have temporarily changed our mailing address. Please mail all letters, correspondences, or check donations to:
+</p>
+<p class="paddingmob"  style="text-align: center;padding-left: 210px; padding-right: 210px;">
+GlobalGiving  <br>
+500 Westover Dr #17382 <br>
+Sanford, NC 27330 <br>
+USA
+</p>
+
+ <p class="paddingmob"  style="text-align: center;padding-left: 210px; padding-right: 210px;"> This address is subject to change once GlobalGiving staff safely return to the office. Please continue to check our website for updates.</p>
+
+
+
+</div>
+
+    </div>
+
+
+
+  <div class="col-md-12" style="text-align: center;">
+                                    
+<div class="paddingmob"  style="padding-left: 300px; padding-right: 300px; margin-top: 40px;">
+ 
+    <h3 class="hoveronheading  " style="  text-align: center;  width: 100%!important; padding: 10px;  ">
+    
+    
+    Visit Our Offices</h3>
+</div>
+</div>
+
+
+
+<div class="col-md-12 hoveronheading">
+                                    
+    <div class="paddingmob"  style="padding-left: 270px; padding-right: 270px; margin-top: 40px; ">
+<div style="display: flex; justify-content: space-between;   padding: 10px; ">
+
+
+    <div class="fullwidth">
+
+<h5 >Washington Dc</h5>
+<p>Visit our offices <br>
+    Washington DC<br>
+    1110 Vermont Ave. NW Suite 550<br>
+    Washington DC 20005 USA<br>
+    +1-202-232-5784<br>
+    Leave a message and we will return your call within 4 business hours<br>
+    US Toll Free: 877-605-2314<br>
+    Fax: +1-202-315-2558<br>
+    </p>
+
+    </div>
+    <div>
+        <h5>London UK</h5>
+
+
+        <p>London UKbr <br>
+            87 Wimpole Street<br>
+            London W1G 9RL<br>
+            +44 1727 224647<br>
+            8am - 1pm GMT<br>
+            (Monday - Friday)</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+    </div>
+    </div>
+    
+ </div>
+                      <footer style="background: #FFE9D6; color:#FFE9D6 ; margin-top: 100px; height: 50px;">
+
+                                                        </footer>
+                                                        <script>
+                                                            var userInfo = JSON.parse(localStorage.getItem('userInfo'))
+                                                            if(userInfo){
+                                                            
+                                                              var element = document.getElementById('hide');
+                                                            
+                                                              console.log("hide1",element)
+                                                             element.classList.add("hide");
+                                                             
+                                                            
+                                                            }
+                                                            else{
+                                                              var profile1 = document.getElementById('profile');
+                                                             console.log("profile",profile1)
+                                                              profile.classList.add("profile");
+                                                              
+                                                              var signout1 = document.getElementById('signout');
+                                                             console.log("signout",signout1)
+                                                          
+                                                                signout1.classList.add("signout");
+                                                          
+                                                            
+                                                          
+                                                            }
+                                                            </script>
+ 
+    
+                    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.39/dist/shoelace.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>  
+</body>
+</html>

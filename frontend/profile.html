@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.39/dist/themes/base.css">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        font-family: 'Poppins';
+    }
+
+    </style>
+
+</head>
+<body  style="background-color: white; ">
+
+        <!-- here is whole navbar starts that include all pages -->
+
+    <nav class="navbar navbar-expand-md navbar-light " style="background: #FFE9D6;" >
+        <a href="./index.html" class="navbar-brand">
+            <img src="./images/logo.png" width="200px" height="25px" alt="">                       </a>
+       
+       
+        <!-- end of a tag -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        
+        
+        </button>
+        <!-- end of button -->
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse" >
+           
+            <div class="navbar-nav ml-auto">
+                <a href="./index.html" style="font-size: 12px; font-weight: bolder;" class="nav-item nav-link">HOME</a>
+                                <a href="./profile.html" style="font-size: 12px;  font-weight: bold;"  id="profile"   class="nav-item nav-link">PROFILE</a>
+
+                                <a href="./about.html" style="font-size: 12px; font-weight: bold;" class="nav-item nav-link">CONTACT</a>
+
+                                <a href="./login.html"  style="font-size: 12px;    font-weight: bold;"  id="hide"  class="nav-item nav-link  ">SIGN IN</a>
+                                <a href="./login.html"  style="font-size: 12px;    font-weight: bold;" id="signout"  class="nav-item nav-link " onClick="signout()" >SIGN OUT</a>            </div>
+        <!-- end of navbar div -->
+
+
+        </div>
+        <!-- end of navbar collapse -->
+    </div>
+        <!-- end of navbar expand div -->
+
+
+    </nav>
+        <!-- end of navbar -->
+
+<div id="success">
+
+</div>
+
+
+
+                    <div class="container-fluid  "  >
+                        <div class="row">
+                      <div class="col-md-3  picturemob" style="margin-top: 100px; ">
+                                    <i  style="font-size: 250px; color: lightgray;" class="fa fa-user-circle   avatar" aria-hidden="true"></i>
+ 
+                                </div>
+
+                                <div class="col-md-3 "style="margin-top:80px ">
+                                   
+                                    <form action="" id="login">
+                                        <h3 class="hoveronheading" style="color: #5B564C
+                                    ;">User Profile</h3>
+                                    <div style="padding: 10px;">
+                                        <h6>User Name</h6>
+                                        <p id="full" ></p>   
+
+
+                                        <h6 >Email</h6>
+                                          <p id="Email">signoutshaikh79@gmail.com</p>   
+                                         
+
+                                        
+                                        
+
+
+                                    </div>
+                                         
+                                    <button  type="submit"   value="Submit Form"  class="create"  style="margin-top: 10px; width: 70%;  margin-left: 30px;" onclick="called()" >  Edit Profile </button>
+                                    <button   class="cancel"    type="submit" value="Submit Form"  id="deactivate"  id="cancel" style="margin-top: 10px; width: 70%; margin-left: 30px; background:#5D87A1;">    Deactivate Account </button>
+                                </form>
+                                </div>
+
+        <!-- end of col-md-3 -->
+
+                                <div class="col-md-3">
+                                   
+                              </div>
+        <!-- end of col-md-3 -->
+
+
+                                </div>
+        <!-- end of contanier -->
+
+        <!-- here is footer pink -->
+                      
+<footer style="background: #FFE9D6; color:#FFE9D6 ; margin-top: 100px; height: 50px;"></footer>
+
+
+            
+<script>
+
+  function called(){
+      window.location="./edit.html"
+  }
+
+     
+    var userInfo = JSON.parse(localStorage.getItem('userInfo'))
+    if(userInfo){
+        console.log("userinfo",userInfo._id)
+
+      var element = document.getElementById('hide');
+    
+      console.log("hide1",element)
+     element.classList.add("hide");
+
+
+
+     document.getElementById('full').innerHTML=userInfo.fullName
+     document.getElementById('Email').innerHTML=userInfo.email
+
+     
+    
+    }
+    else{
+      var profile1 = document.getElementById('profile');
+     console.log("profile",profile1)
+      profile.classList.add("profile");
+      
+      var signout1 = document.getElementById('signout');
+     console.log("signout",signout1)
+  
+        signout1.classList.add("signout");
+  
+    
+  
+    }
+    </script>
+    <script src="./deactivate.js"></script>
+    <script src="./editprofile.js" ></script>
+    <script src="./signout.js"></script>
+
+    
+                    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.39/dist/shoelace.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>  
+</body>
+</html>
