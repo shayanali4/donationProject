@@ -6,12 +6,12 @@ import userRouter from './routers/userRouter.js'
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
-const fileUpload = require('express-fileupload'); 
+const fileUpload = require('express-fileupload');  // Requiring package for file upload
 
 dotenv.config(); // getting data from .env file
 
 const app = express(); // defining express app
-app.use(fileUpload());
+app.use(fileUpload()); // Handling image upload in app
 
 app.use(cors()) // Use this after the variable declaration
 
@@ -19,7 +19,7 @@ app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: true })); //handling data received in the request
 
 // Defining mongoDB database location
-mongoose.connect('mongodb+srv://admin:admin123@cluster0.gwgp8.mongodb.net/BackendDataService?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Sarah01:user123456789@cluster0.z24j8.mongodb.net/DonationProject?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

@@ -65,11 +65,13 @@
 
 
 
+
+
                     <div class="container-fluid  "  >
                         <div class="row">
-                      <div class="col-md-3  picturemob" style="margin-top: 100px; ">
-                                    <i  style="font-size: 250px; color: lightgray;" class="fa fa-user-circle   avatar" aria-hidden="true"></i>
- 
+                      <div class="col-md-3 fullscreen picturemobile1" >
+
+<img src=""   height="200px" id="profileuser" alt="">
                                 </div>
 
                                 <div class="col-md-3 "style="margin-top:80px ">
@@ -83,7 +85,7 @@
 
 
                                         <h6 >Email</h6>
-                                          <p id="Email">signoutshaikh79@gmail.com</p>   
+                                          <p id="Email"></p>   
                                          
 
                                         
@@ -123,19 +125,31 @@
      
     var userInfo = JSON.parse(localStorage.getItem('userInfo'))
     if(userInfo){
-        console.log("userinfo",userInfo._id)
+        console.log("userinfo123456",userInfo._id)
 
+      
+      
       var element = document.getElementById('hide');
     
       console.log("hide1",element)
      element.classList.add("hide");
 
-
+console.log("from profile",userInfo)
 
      document.getElementById('full').innerHTML=userInfo.fullName
      document.getElementById('Email').innerHTML=userInfo.email
 
-     
+     var profileuser =  document.getElementById('profileuser')
+     console.log(userInfo._id)
+      profileuser.src=`https://backend-data-service.herokuapp.com/users/image/${userInfo._id}`
+
+
+
+
+
+
+      console.log(profileuser.src)
+       
     
     }
     else{
@@ -156,7 +170,7 @@
     <script src="./editprofile.js" ></script>
     <script src="./signout.js"></script>
 
-    
+    <script src="profile.js" ></script>
                     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.39/dist/shoelace.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

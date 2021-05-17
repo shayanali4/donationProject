@@ -28,6 +28,10 @@ body{
       justify-content: center;
       margin-left: 34%;
   }
+  .fullscreen{
+    margin-top: 100px; 
+     margin-left: 40px;
+  }
 
 
   /* payment donate section tAG style*/
@@ -476,6 +480,7 @@ body{
       font-weight: bold;
       padding: 2px;
     }
+    
     .h6mob4{
       margin-top: 30px;
     }
@@ -488,6 +493,11 @@ body{
       margin-left: 100px !important;
       margin-top: 10px!important;
     }
+   .picturemobile1{
+      margin-top: 30px!important;
+margin-left: 60px!important;   }
+
+
     .mobilemargin{
       margin-top: 50px;
     }

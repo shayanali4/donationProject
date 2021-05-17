@@ -6,7 +6,7 @@ import { generateToken } from '../utils.js'; // importing generate token functio
 import path from 'path';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const fs = require('fs');
+const fs = require('fs');  // requiring the library for accessing the filesystem
 
 
 // Defining the user Router so that is can be used whenever it is called
@@ -60,6 +60,7 @@ userRouter.post('/register', expressAsyncHandler(async (req, res) => {
     res.send({ // Send Created user in response
         _id: createdUser._id,
         fullName: createdUser.fullName,
+        image: createdUser.image,
         email: createdUser.email,
         token: generateToken(createdUser),
     });
@@ -88,10 +89,10 @@ userRouter.delete('/delete/:id', expressAsyncHandler(async (req, res) => {
     });
 }));
 
-
+// This is the POST request to upload and save profile picture of the particular user
 userRouter.post('/upload/:id', expressAsyncHandler(async (req, res) => {
     const __dirname = path.resolve();
-    if (req.files === null) {
+    if (req.files === null) {  // Check if the file is received 
         res.status(400).json({ message: 'No file uploaded' })
     }else{
         console.log("file==>", req.files) 
@@ -101,14 +102,14 @@ userRouter.post('/upload/:id', expressAsyncHandler(async (req, res) => {
         let i = filename.lastIndexOf('.');
         const fileExt = filename.substr(i);
 
-    fs.access(`${__dirname}/uploads`,
+    fs.access(`${__dirname}/uploads`,  // Check if the uploads folder is present
         fs.constants.F_OK, async noFolder => {
-            if (noFolder) {
+            if (noFolder) {  // If not present, then create one
                 fs.mkdir(`${__dirname}/uploads`, function (err) {
                     if (err) {
                         console.log(err)
                     } else {
-                        console.log("New directory successfully created.")
+                        console.log("New directory successfully created.")  // Folder created
                     }
                 });
             }
@@ -116,7 +117,7 @@ userRouter.post('/upload/:id', expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ _id: req.params.id }); // Finding the user by _id
     user.image=`${req.params.id}${fileExt}`;
     await user.save();
-    file.mv(`${__dirname}/uploads/${req.params.id}${fileExt}`, err => { 
+    file.mv(`${__dirname}/uploads/${req.params.id}${fileExt}`, err => {  // if file is received then move the file to the uploads folder
         if (err) {
             console.error(err);
             res.send(500).send(err)
@@ -127,6 +128,7 @@ userRouter.post('/upload/:id', expressAsyncHandler(async (req, res) => {
 }
 ));
 
+// This is the GET request to return the profile picture of the particular user
 userRouter.get('/image/:id', expressAsyncHandler(async (req, res) => {
     const __dirname = path.resolve();
     const user = await User.findOne({ _id: req.params.id }); // Finding the user by _id
@@ -134,13 +136,13 @@ userRouter.get('/image/:id', expressAsyncHandler(async (req, res) => {
         const fileName = user.image;
         // const imagePath = `${__dirname}/uploads/profile.jpg`;
         if(fileName===''){
-            res.send({message: "The image is either moved or deleted !"});
+            res.sendFile(`${__dirname}/uploads/default.png`); //If no picture is uploaded then return the default image
         }else{
             const imagePath = `${__dirname}/uploads/${fileName}`;
-            res.sendFile(imagePath);
+            res.sendFile(imagePath);  // Return user image 
         }
     }else{
-        res.send({message: "The image is either moved or deleted !"});
+        res.sendFile(`${__dirname}/uploads/default.png`);
     }
 
 }));

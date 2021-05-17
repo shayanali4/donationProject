@@ -45,9 +45,10 @@ var updateuser=userInfo._id
 
 
 .then((data) => {
-    console.log("success is only",data)
+    console.log("success is old",data)
     localStorage.removeItem("userInfo");
     localStorage.setItem('userInfo', JSON.stringify(data));
+    console.log("here is new data",data)
     var userInfo = JSON.parse(localStorage.getItem('userInfo'))
 var success = document.getElementById("success1")
      console.log(success)

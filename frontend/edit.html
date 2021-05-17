@@ -71,13 +71,13 @@
 <img src="" alt=""> 
                                 </div>
 
-                                <div class="col-md-3 "style="margin-top:80px ">
+                                <div class="col-md-3"   style="margin-top:80px ">
                                    
-                                
+                                <p id="picturemob" class="hide" > successfully uploaded</p>
 
 
 
-                                    <input type="file" id="image12" name="photo" onchange="handleImageUpload(this)">
+                                    <input type="file" id="image12" class="imagevisible" name="photo" onchange="handleImageUpload(this)">
                                     
 
     
@@ -162,6 +162,17 @@
     }
 
     async function handleImageUpload(event) {
+ var successvalue= document.getElementById('image12').value;
+if(successvalue!==''){
+    console.log("here",successvalue)
+    success=document.getElementById('picturemob')
+    success.classList.remove('hide')
+    success.classList.add('success')
+    
+
+}
+
+
      console.log("hello", event.files[0])
     const formData = new FormData()
     formData.append('myFile', event.files[0]);
@@ -184,7 +195,7 @@
 //     console.log(response);
 //   });
 
-const { data } = await axios.post(`http://localhost:5000/users/upload/${id}`, formData, {
+const { data } = await axios.post(`https://backend-data-service.herokuapp.com/users/upload/${id}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       }
